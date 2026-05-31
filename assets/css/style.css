@@ -98,8 +98,7 @@ nav {
 
 /* ABOUT */
 .about-section { background: var(--cream); display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-.about-img-box { background: var(--navy); min-height: 480px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
-.about-img-box::after { content: '[Your Photo]'; color: rgba(255,255,255,0.2); font-size: 1rem; letter-spacing: 0.1em; text-transform: uppercase; }
+.about-img-box { background: var(--navy); min-height: 480px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; background-size: cover; background-position: center; }
 .about-content { padding: 5rem 3.5rem; display: flex; flex-direction: column; justify-content: center; }
 .about-quote { font-size: 1.7rem; font-style: italic; font-weight: 400; color: var(--navy); line-height: 1.45; margin-bottom: 1.8rem; padding-left: 1.4rem; border-left: 2px solid var(--gold); }
 .about-text { color: var(--text-muted); font-size: 1.05rem; line-height: 1.85; margin-bottom: 1rem; font-weight: 300; }
