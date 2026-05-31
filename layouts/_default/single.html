@@ -1,0 +1,11 @@
+{{ define "main" }}
+<div class="about-section" id="about" style="border-top:none;border-bottom:none;min-height:60vh;">
+  <div class="about-img-box"></div>
+  <div class="about-content">
+    <blockquote class="about-quote">"{{ .Params.quote | default "Every tax dispute has a path to resolution — the key is knowing where to look." }}"</blockquote>
+    <div class="article-body">
+      {{ .Content }}
+    </div>
+  </div>
+</div>
+{{ end }}

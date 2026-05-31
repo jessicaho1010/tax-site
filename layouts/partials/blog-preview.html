@@ -1,0 +1,31 @@
+<div class="blog-section" id="blog">
+  <div class="blog-header">
+    <div>
+      <div class="section-eyebrow">Analysis &amp; Commentary</div>
+      <h2 class="section-title" style="margin-bottom:0">Recent Insights</h2>
+    </div>
+    <a href="{{ "/insights/" | relURL }}" class="blog-link">All insights</a>
+  </div>
+  <div class="posts-grid">
+    {{ $posts := where .Site.RegularPages "Section" "insights" }}
+    {{ range first 3 $posts }}
+      <a href="{{ .RelPermalink }}" class="post-card" style="display:block;color:inherit;">
+        <div class="post-thumb"><div class="post-thumb-text">&sect;</div></div>
+        <div class="post-body">
+          {{ with .Params.tags }}
+            <div class="post-tag">{{ index . 0 }}</div>
+          {{ end }}
+          <div class="post-title">{{ .Title }}</div>
+          <div class="post-excerpt">{{ .Params.excerpt | default .Summary | truncate 180 }}</div>
+          <div class="post-meta">{{ .ReadingTime }} min read &middot; {{ .Date.Format "January 2006" }}</div>
+        </div>
+      </a>
+    {{ else }}
+      <div class="post-card">
+        <div class="post-body">
+          <p class="post-excerpt">Insights and analysis coming soon. Stay tuned for in-depth articles on international tax enforcement and dispute resolution.</p>
+        </div>
+      </div>
+    {{ end }}
+  </div>
+</div>

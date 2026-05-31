@@ -1,0 +1,13 @@
+<nav>
+  <a href="{{ "/" | relURL }}" class="nav-logo">{{ .Site.Title }}</a>
+  <div class="nav-links">
+    <a href="{{ "/#about" | relURL }}">About</a>
+    <a href="{{ "/#areas" | relURL }}">Practice Areas</a>
+    <a href="{{ "/insights/" | relURL }}">Insights</a>
+    <a href="{{ "/#contact" | relURL }}">Contact</a>
+  </div>
+  <a href="{{ "/#contact" | relURL }}" class="nav-cta">Further Consultation</a>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>

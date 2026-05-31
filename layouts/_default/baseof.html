@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {{ partial "head.html" . }}
+</head>
+<body>
+  {{ partial "nav.html" . }}
+  {{ partial "mobile-menu.html" . }}
+
+  {{ block "main" . }}{{ end }}
+
+  {{ block "cta" . }}
+    {{ partial "cta.html" . }}
+  {{ end }}
+
+  {{ partial "footer.html" . }}
+
+  {{ $js := resources.Get "js/main.js" }}
+  {{ if $js }}
+    <script src="{{ $js.RelPermalink }}"></script>
+  {{ else }}
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var hamburger = document.getElementById('hamburger');
+        var mobileMenu = document.getElementById('mobileMenu');
+        if (hamburger && mobileMenu) {
+          hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('open');
+            mobileMenu.classList.toggle('open');
+          });
+        }
+        window.closeMenu = function() {
+          if (hamburger) hamburger.classList.remove('open');
+          if (mobileMenu) mobileMenu.classList.remove('open');
+        };
+      });
+    </script>
+  {{ end }}
+</body>
+</html>

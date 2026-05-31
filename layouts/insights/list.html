@@ -1,0 +1,21 @@
+{{ define "main" }}
+<div class="insights-page">
+  <h1 class="page-title">Insights</h1>
+  <p class="page-subtitle">Analysis and commentary on international tax enforcement, dispute resolution, and cross-border compliance.</p>
+  <div class="posts-grid">
+    {{ range .Pages }}
+      <a href="{{ .RelPermalink }}" class="post-card" style="display:block;color:inherit;">
+        <div class="post-thumb"><div class="post-thumb-text">&sect;</div></div>
+        <div class="post-body">
+          {{ with .Params.tags }}
+            <div class="post-tag">{{ index . 0 }}</div>
+          {{ end }}
+          <div class="post-title">{{ .Title }}</div>
+          <div class="post-excerpt">{{ .Params.excerpt | default .Summary | truncate 180 }}</div>
+          <div class="post-meta">{{ .ReadingTime }} min read &middot; {{ .Date.Format "January 2006" }}</div>
+        </div>
+      </a>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

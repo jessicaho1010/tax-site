@@ -1,0 +1,24 @@
+{{ define "main" }}
+<div class="article-page">
+  {{ with .Params.tags }}
+    <div class="post-tag">{{ index . 0 }}</div>
+  {{ end }}
+  <h1>{{ .Title }}</h1>
+  <div class="post-meta">{{ .ReadingTime }} min read &middot; {{ .Date.Format "January 2, 2006" }}</div>
+  <div class="article-body">
+    {{ .Content }}
+  </div>
+  <div class="article-nav">
+    {{ with .PrevInSection }}
+      <a href="{{ .RelPermalink }}">&larr; {{ .Title }}</a>
+    {{ else }}
+      <span></span>
+    {{ end }}
+    {{ with .NextInSection }}
+      <a href="{{ .RelPermalink }}">{{ .Title }} &rarr;</a>
+    {{ else }}
+      <span></span>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

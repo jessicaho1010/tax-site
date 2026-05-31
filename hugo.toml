@@ -1,0 +1,19 @@
+baseURL = "/"
+defaultContentLanguage = "en"
+title = "China Tax Dispute Resolution Insight"
+
+[languages.en]
+  locale = "en-us"
+
+[params]
+  author = "Jiajing He"
+  description = "Expert tax dispute resolution and international tax enforcement services. Helping individuals and businesses navigate complex cross-border tax controversies worldwide."
+  keywords = "tax dispute resolution, international tax enforcement, cross-border tax, tax audit defense, FATCA, FBAR, voluntary disclosure, tax controversy"
+  email = "your@email.com"
+  copyrightYear = "2026"
+
+[markup.goldmark.renderer]
+  unsafe = true  # Allow raw HTML in markdown
+
+[build]
+  writeStats = true

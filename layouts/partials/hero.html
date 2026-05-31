@@ -1,0 +1,29 @@
+<div class="hero">
+  <svg class="hero-globe" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="250" cy="250" r="240" stroke="#0f2240" stroke-width="0.8"/>
+    <ellipse cx="250" cy="250" rx="120" ry="240" stroke="#0f2240" stroke-width="0.8"/>
+    <ellipse cx="250" cy="250" rx="240" ry="80" stroke="#0f2240" stroke-width="0.8"/>
+    <ellipse cx="250" cy="250" rx="240" ry="160" stroke="#0f2240" stroke-width="0.8"/>
+    <line x1="10" y1="250" x2="490" y2="250" stroke="#0f2240" stroke-width="0.8"/>
+    <line x1="250" y1="10" x2="250" y2="490" stroke="#0f2240" stroke-width="0.8"/>
+  </svg>
+  <div class="hero-left">
+    <div class="hero-eyebrow">{{ .Params.hero.eyebrow | default "International Tax Specialist" }}</div>
+    <h1 class="hero-title">
+      {{ .Params.hero.title | default "Tax disputes <em>resolved,</em><br><span class=\"accent\">wherever they arise.</span>" | safeHTML }}
+    </h1>
+    <p class="hero-desc">{{ .Params.hero.description | default "Whether you're facing a tax audit defense, a corporate tax controversy, or need to bring offshore affairs into domestic compliance — I provide clear strategy, rigorous advocacy, and practical solutions." }}</p>
+    <div class="hero-btns">
+      <a href="{{ "/insights/" | relURL }}" class="btn-primary">Read Insights</a>
+      <a href="{{ "/#about" | relURL }}" class="btn-outline">About Me</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-card">
+      <div class="hero-card-label">Latest Insight</div>
+      <div class="hero-card-title">{{ .Params.hero.cardTitle | default "How FATCA & FBAR Penalty Trends Are Shifting" }}</div>
+      <div class="hero-card-excerpt">{{ .Params.hero.cardExcerpt | default "Recent IRS enforcement data points to a significant shift in how offshore non-compliance is being penalised. Here's what cross-border taxpayers need to know now." }}</div>
+      <a href="{{ .Params.hero.cardLink | default "/insights/fatca-fbar-2026/" | relURL }}" class="hero-card-link">Read the analysis</a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,56 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "static/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "insights"
+    label: "Insights (Blog Posts)"
+    folder: "content/insights"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Tags", name: "tags", widget: "list", default: ["International Tax"] }
+      - { label: "Excerpt", name: "excerpt", widget: "text", hint: "Short summary shown on the blog listing page (max 180 characters)" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "pages"
+    label: "Pages"
+    editor:
+      preview: false
+    files:
+      - label: "Home Page"
+        name: "home"
+        file: "content/_index.md"
+        fields:
+          - { label: "Hero Eyebrow", name: "hero_eyebrow", widget: "string", default: "International Tax Specialist" }
+          - { label: "Hero Title (HTML allowed for styling)", name: "hero_title", widget: "string", default: "Tax disputes <em>resolved,</em><br><span class=\"accent\">wherever they arise.</span>" }
+          - { label: "Hero Description", name: "hero_description", widget: "text", default: "Whether you're facing a tax audit defense, a corporate tax controversy, or need to bring offshore affairs into domestic compliance — I provide clear strategy, rigorous advocacy, and practical solutions." }
+          - { label: "Hero Card Title", name: "hero_card_title", widget: "string", default: "How FATCA & FBAR Penalty Trends Are Shifting" }
+          - { label: "Hero Card Excerpt", name: "hero_card_excerpt", widget: "text", default: "Recent IRS enforcement data points to a significant shift in how offshore non-compliance is being penalised." }
+
+      - label: "About Page"
+        name: "about"
+        file: "content/about.md"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "string" }
+          - { label: "Quote", name: "quote", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "settings"
+    label: "Site Settings"
+    editor:
+      preview: false
+    files:
+      - label: "General Settings"
+        name: "general"
+        file: "data/settings.json"
+        create: true
+        fields:
+          - { label: "Email Address", name: "email", widget: "string", default: "your@email.com" }
+          - { label: "Copyright Year", name: "copyright_year", widget: "string", default: "2026" }
