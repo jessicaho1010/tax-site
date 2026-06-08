@@ -1,0 +1,12 @@
+{
+  "name": "tax-dispute-resolution-site",
+  "version": "1.0.0",
+  "description": "Automated article generation for Tax Dispute Resolution Insight",
+  "private": true,
+  "scripts": {
+    "generate": "node scripts/generate-article.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.39.0"
+  }
+}
